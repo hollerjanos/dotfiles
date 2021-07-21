@@ -1,0 +1,13 @@
+#==============================
+# Alias(es)
+#==============================
+
+alias c="clear"
+alias v="nvim"
+alias weather="clear -x && curl wttr.in"
+alias open="xdg-open"
+alias r="reset"
+alias now="date \"+%Y%m%d%H%M%S\""
+alias aff="~/work/scripts/get-affiliate-data.sh"
+alias count="find . -type f | wc -l"
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
