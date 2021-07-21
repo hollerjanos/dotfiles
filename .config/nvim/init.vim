@@ -1,7 +1,7 @@
 " Plugin(s)
 
 call plug#begin('~/.config/nvim/plugged')
-	Plug 'junegunn/goyo.vim' | Plug 'junegunn/limelight.vim'
+  Plug 'junegunn/goyo.vim' | Plug 'junegunn/limelight.vim'
   Plug 'ctrlpvim/ctrlp.vim' | Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'vim-scripts/fountain.vim' | Plug 'tpope/vim-markdown' | Plug 'ap/vim-css-color'
   Plug 'vifm/vifm.vim'
