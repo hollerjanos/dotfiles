@@ -4,9 +4,10 @@
 
 # Variable(s)
 
-export EDITOR="nvim"
-export TERMINAL="alacritty"
-export BROWSER="firefox"
+export EDITOR="/usr/bin/nvim"
+export TERMINAL="/home/hollerjanos/.cargo/bin/alacritty"
+export SHELL="/usr/bin/zsh"
+export BROWSER="/usr/bin/firefox"
 export MANPAGER="nvim +Man!" # Open man page as nvim
 export TERM="xterm-256color"
 
