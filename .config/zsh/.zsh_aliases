@@ -11,3 +11,4 @@ alias now="date \"+%Y%m%d%H%M%S\""
 alias aff="~/work/scripts/get-affiliate-data.sh"
 alias count="find . -type f | wc -l"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias ls="ls --color=always"
