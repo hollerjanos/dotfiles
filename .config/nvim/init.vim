@@ -7,6 +7,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'vifm/vifm.vim'
   Plug 'preservim/nerdtree'
   Plug 'morhetz/gruvbox'
+  Plug 'vim-syntastic/syntastic'
 call plug#end()
 
 " General setting(s)
