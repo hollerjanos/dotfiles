@@ -1,1 +1,23 @@
-/home/hollerjanos/configs/.gitconfig
+[user]
+	name = Holler János
+  username = hollerjanos
+	email = hollerjanika@gmail.com
+[core]
+	editor = nvim
+	pager = /usr/bin/less
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
+[init]
+	defaultBranch = main
+[color "status"]
+  added = green
+  changed = yellow
+  untracked = red
+[alias]
+  ci = commit
+  co = checkout
+  st = status -sb
+  lg = log --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %C(white)- %an, %ar%Creset'
+
