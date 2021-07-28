@@ -17,6 +17,7 @@ set shiftwidth=2 autoindent smartindent tabstop=2 softtabstop=2 expandtab
 set cursorline
 "set list
 "set listchars=tab:>>,trail:·,eol:$
+set nowrap
 
 " Display colorcolumn in Insert mode
 
@@ -102,11 +103,3 @@ endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
-
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O<Tab>
-inoremap {;<CR> {<CR>};<ESC>O<Tab>
