@@ -1,16 +1,16 @@
 [user]
-	name = Holler János
+  name = Holler János
   username = hollerjanos
-	email = hollerjanika@gmail.com
+  email = hollerjanika@gmail.com
 [core]
-	editor = nvim
-	pager = /usr/bin/less
+  editor = nvim
+  pager = /usr/bin/less
 [diff]
-	tool = vimdiff
+  tool = vimdiff
 [merge]
-	tool = vimdiff
+  tool = vimdiff
 [init]
-	defaultBranch = main
+  defaultBranch = main
 [color "status"]
   added = green
   changed = yellow
@@ -20,4 +20,3 @@
   co = checkout
   st = status -sb
   lg = log --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %C(white)- %an, %ar%Creset'
-
