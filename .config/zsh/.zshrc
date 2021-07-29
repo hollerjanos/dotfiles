@@ -24,6 +24,11 @@ zstyle ":completion:*" matcher-list "" "m:{a-zA-Z}={A-Za-z}"
 
 PROMPT="%F{green}%1~%f "
 
+# Keyboard
+
+gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 20
+gsettings set org.gnome.desktop.peripherals.keyboard delay 200
+
 #==============================
 # Alias(es)
 #==============================
