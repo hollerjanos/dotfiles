@@ -1,4 +1,6 @@
+"==============================
 " Plugin(s)
+"==============================
 
 call plug#begin('~/.config/nvim/plugged')
   Plug 'junegunn/goyo.vim' | Plug 'junegunn/limelight.vim'
@@ -10,7 +12,9 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'vim-syntastic/syntastic'
 call plug#end()
 
+"==============================
 " General setting(s)
+"==============================
 
 set encoding=UTF-8 nobackup nowritebackup nocursorline splitbelow splitright wildmode=longest,list,full
 set shiftwidth=2 autoindent smartindent tabstop=2 softtabstop=2 expandtab
@@ -48,30 +52,66 @@ set statusline+=%#DiffText#
 set statusline+=\ %l/%L
 set statusline+=\ [%c]
 
+"==============================
 " Key binding(s)
+"==============================
 
+" Leader key
 let mapleader=" "
 
+" Load current file
 nnoremap <leader>s :source ~/.config/nvim/init.vim<CR>
+
+" Open Goyo
 nnoremap <leader><ENTER> :Goyo<CR>
+
+" Open CtrlP
 nnoremap <leader><Space> :CtrlP<CR>
+
+" Toggle NERDTree
 nnoremap <leader>n :NERDTreeToggle<CR>
+
+" Open ViFm
 nnoremap <leader>f :TabVifm .<CR>
+
+" Fold setting(s)
 nnoremap <leader>z :set invrnu invnu<CR>
 nnoremap <leader><C-l> :set nofoldenable<CR>
 nnoremap <C-l> :set foldmethod=indent<CR>
 nnoremap <C-k> :set foldmethod=syntax<CR>
-xnoremap K :move '<-2<CR>gv-gv
-xnoremap J :move '>+1<CR>gv-gv
 
+" In VISUAL mode moving selected lines up/down
+xnoremap K :move '<-2<CR>gv=gv
+xnoremap J :move '>+1<CR>gv=gv
+
+" Disable Q
 nnoremap Q <nop>
 
+" Disable arrow keys
 nnoremap <Up> <nop>
 nnoremap <Down> <nop>
 nnoremap <Left> <nop>
 nnoremap <Right> <nop>
 
+" Yank until the end of the line
+nnoremap Y y$
+
+" Next/Previous search, center the line & open folds
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" Cursor stays after pressing J (Join lines)
+nnoremap J mzJ`z
+
+" Undo break point(s)
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
+
+"==============================
 " Color setting(s)
+"==============================
 
 colorscheme gruvbox
 set background=dark
