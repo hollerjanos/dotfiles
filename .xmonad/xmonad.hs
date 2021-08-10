@@ -1,80 +1,70 @@
---
--- xmonad example config file.
---
--- A template showing all available configuration hooks,
--- and how to override the defaults in your own xmonad.hs conf file.
---
--- Normally, you'd only override those defaults you care about.
---
+--------------------------------
+-- Import(s)
+--------------------------------
 
 import XMonad
 import Data.Monoid
 import System.Exit
 import XMonad.Util.SpawnOnce
 import XMonad.Util.Run
-import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.ManageDocks -- (avoidStruts, docksStartupHook, manageDocks, ToggleStruts(..))
+
+-- Layout(s)
+import XMonad.Layout.NoBorders
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
--- The preferred terminal program, which is used in a binding below and by
--- certain contrib modules.
---
-myTerminal      = "alacritty"
+--------------------------------
+-- Declaration(s)
+--------------------------------
 
--- Whether focus follows the mouse pointer.
+-- Terminal
+myTerminal :: String
+myTerminal = "alacritty"
+
+-- Window focus setting(s)
 myFocusFollowsMouse :: Bool
 myFocusFollowsMouse = True
 
--- Whether clicking on a window to focus also passes the click to the window
 myClickJustFocuses :: Bool
 myClickJustFocuses = False
 
--- Width of the window border in pixels.
---
-myBorderWidth   = 1
+-- Border width
+myBorderWidth = 1 -- In pixels
 
--- modMask lets you specify which modkey you want to use. The default
--- is mod1Mask ("left alt").  You may also consider using mod3Mask
--- ("right alt"), which does not conflict with emacs keybindings. The
--- "windows key" is usually mod4Mask.
---
-myModMask       = mod4Mask
-
--- The default number of workspaces (virtual screens) and their names.
--- By default we use numeric strings, but any string may be used as a
--- workspace name. The number of workspaces is determined by the length
--- of this list.
---
--- A tagging example:
---
--- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
---
-myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
-
--- Border colors for unfocused and focused windows, respectively.
---
-myNormalBorderColor  = "#000000"
+myNormalBorderColor = "#404040"
 myFocusedBorderColor = "#FFFFFF"
 
-------------------------------------------------------------------------
--- Key bindings. Add, modify or remove key bindings here.
---
+-- Mod Mask
+-- - mod1Mask = Left ALT
+-- - mod2Mask = Num Lock
+-- - mod3Mask = Right ALT
+-- - mod4Mask = Super
+myModMask = mod4Mask
+
+-- Workspaces
+myWorkspaces = ["1","2","3","4","5","6","7","8","9"]
+
+--------------------------------
+-- Key binding(s)
+--------------------------------
+
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
-    -- launch a terminal
+    -- Launch a terminal
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
 
-    -- launch dmenu
+    -- Launch dmenu
     , ((modm,               xK_p     ), spawn "dmenu_run")
 
-    -- launch gmrun
+    -- Launch gmrun
     , ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
 
-    -- close focused window
+    -- Close focused window
     , ((modm .|. shiftMask, xK_c     ), kill)
 
-     -- Rotate through the available layout algorithms
+    -- Rotate through the available layout algorithms
     , ((modm,               xK_space ), sendMessage NextLayout)
 
     --  Reset the layouts on the current workspace to default
@@ -133,6 +123,16 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- Run xmessage with a summary of the default keybindings (useful for beginners)
     , ((modm .|. shiftMask, xK_slash ), spawn ("echo \"" ++ help ++ "\" | xmessage -file -"))
+
+    -- Increase volume
+    , ((modm              , xK_Up    ), spawn "amixer -q sset Master 5%+")
+
+    -- Decrease volume 
+    , ((modm              , xK_Down    ), spawn "amixer -q sset Master 5%-"),
+
+  -- Dmenu
+  ((modm .|. shiftMask, xK_space), sendMessage ToggleStruts)
+
     ]
     ++
 
