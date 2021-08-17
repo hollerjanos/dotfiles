@@ -11,6 +11,9 @@ My current distribution is [Ubuntu 20.04](https://ubuntu.com), but I'm going to 
 * [Neovim](https://neovim.io)
 * [Zsh](https://www.zsh.org)
 * [Alacritty](https://github.com/alacritty/alacritty)
+* [Git](https://git-scm.com)
+* [XMonad](https://xmonad.org)
+* [XMobar](https://xmobar.org)
 
 ## How to store dotfiles?
 
