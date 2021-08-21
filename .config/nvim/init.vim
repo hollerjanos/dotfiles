@@ -3,6 +3,7 @@
 "==============================
 
 call plug#begin('~/.config/nvim/plugged')
+  Plug 'hollerjanos/holler.vim'
   Plug 'junegunn/goyo.vim' | Plug 'junegunn/limelight.vim'
   Plug 'ctrlpvim/ctrlp.vim' | Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'vim-scripts/fountain.vim' | Plug 'tpope/vim-markdown' | Plug 'ap/vim-css-color'
@@ -10,6 +11,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'preservim/nerdtree'
   Plug 'morhetz/gruvbox'
   Plug 'vim-syntastic/syntastic'
+  Plug 'dracula/vim'
 call plug#end()
 
 "==============================
@@ -19,8 +21,8 @@ call plug#end()
 set encoding=UTF-8 nobackup nowritebackup nocursorline splitbelow splitright wildmode=longest,list,full
 set shiftwidth=2 autoindent smartindent tabstop=2 softtabstop=2 expandtab
 set cursorline
-"set list
-"set listchars=tab:>>,trail:·,eol:$
+set list
+set listchars=tab:>>,trail:·
 set nowrap
 
 " Display colorcolumn in Insert mode
@@ -109,6 +111,12 @@ inoremap . .<c-g>u
 inoremap ! !<c-g>u
 inoremap ? ?<c-g>u
 
+" Find / Replace all
+nnoremap S :%s//g<Left><Left>
+
+" Disable Z
+nnoremap Z <nop>
+
 "==============================
 " Color setting(s)
 "==============================
@@ -119,7 +127,8 @@ set termguicolors
 
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
-hi! Whitespace ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
+hi! NonText guifg=#8080FF
+hi! Whitespace guifg=#8080FF
 
 let g:limelight_conceal_ctermfg = 240
 let g:limelight_conceal_guifg = "#777777"
@@ -138,7 +147,7 @@ function! s:goyo_leave()
   set showcmd
   set scrolloff=5
   Limelight!
-	hi! Normal ctermbg=NONE guibg=NONE
+  hi! Normal ctermbg=NONE guibg=NONE
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
