@@ -11,6 +11,8 @@ import XMonad.Hooks.ManageDocks -- (avoidStruts, docksStartupHook, manageDocks, 
 
 -- Layout(s)
 import XMonad.Layout.NoBorders
+import XMonad.Layout.Grid
+import XMonad.Layout.Spacing
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
@@ -45,6 +47,15 @@ myModMask = mod4Mask
 
 -- Workspaces
 myWorkspaces = ["1","2","3","4","5","6","7","8","9"]
+
+-- Spacing
+--mySpacing :: Integer -> l a -> XMonad.Layout.LayoutModifier.ModifiedLayout Spacing l a
+mySpacing i = spacingRaw False (Border i i i i) True (Border i i i i) True
+
+-- My Layout(s)
+--grid = renamed [Replace "grid"]
+-- $ mySpacing 8
+-- $ Grid (16/20)
 
 --------------------------------
 -- Key binding(s)
@@ -130,6 +141,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Decrease volume 
     , ((modm              , xK_Down    ), spawn "amixer -q sset Master 5%-"),
 
+    -- Screenshot(s)
+    ((modm, xK_Print), spawn "scrot screen_%Y-%m-%d-%H-%M-%S.png -d 1"),
+    ((modm .|. controlMask, xK_Print), spawn "scrot window_%Y-%m-%d-%H-%M-%S.png -d 1-u"),
+
   -- Dmenu
   ((modm .|. shiftMask, xK_space), sendMessage ToggleStruts)
 
@@ -184,7 +199,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
-myLayout = avoidStruts (tiled ||| Mirror tiled ||| Full)
+myLayout = spacing 2 $ avoidStruts (Grid ||| tiled ||| Mirror tiled ||| Full)
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
@@ -249,6 +264,7 @@ myLogHook = return ()
 myStartupHook = do
       spawnOnce "nitrogen --restore &"
       spawnOnce "compton &"
+      spawnOnce "volumeicon"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
