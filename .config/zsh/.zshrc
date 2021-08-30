@@ -26,8 +26,11 @@ PROMPT="%F{green}%1~%f "
 
 # Keyboard
 
+setxkbmap gb # Layout
+
 gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 20
 gsettings set org.gnome.desktop.peripherals.keyboard delay 200
+xset r rate 150 50 # Delay & repeat
 
 #==============================
 # Alias(es)
