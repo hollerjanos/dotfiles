@@ -10,19 +10,19 @@ window:
 scrolling:
   history: 10000
   multiplier: 3
-background_opacity: 0.95
+background_opacity: 0.75
 
 # Font configuration(s)
 font:
   normal:
     family: Fira Code
-    style: Regular
+    style: Bold
   bold:
     family: Fira Code
     style: Bold
   italic:
     family: Fira Code
-    style: Italic
+    style: Bold
   size: 10.0
   offset:
     x: 0
