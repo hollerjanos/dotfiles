@@ -182,9 +182,6 @@ bindsym $mod+r mode "resize"
 for_window [class=".*"] border pixel 0
 gaps inner 5
 
-# Picom
-exec_always --no-startup-id picom &
-
 # Mouse
 focus_follows_mouse yes
 mouse_warping output
