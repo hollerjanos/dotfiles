@@ -201,5 +201,10 @@ bar {
   workspace_buttons yes
   strip_workspace_numbers yes
   strip_workspace_name no
-  status_command i3status
+  # status_command i3status
+  # status_command exec /home/john/.config/i3status/mybar.sh
+  status_command ~/.config/i3status/bumblebee-status/bumblebee-status\
+    -m cpu memory battery pasink pasource layout datetime weather todo taskwarrior system\
+    -p datetime.format="%Y-%m-%d %H:%M:%S" weather.location="Jásd,Veszprém"\
+    -t solarized
 }
