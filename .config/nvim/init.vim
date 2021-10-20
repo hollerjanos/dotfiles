@@ -16,6 +16,18 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'ray-x/lsp_signature.nvim'
   Plug 'akinsho/toggleterm.nvim'
   Plug 'hrsh7th/nvim-compe' | Plug 'tamago324/compe-zsh' " Completion
+
+  " LSP
+  Plug 'neovim/nvim-lspconfig'
+  " Smooth scrolling
+  Plug 'psliwka/vim-smoothie'
+  " Better commentary
+  Plug 'tpope/vim-commentary'
+  " Change dates fast
+  Plug 'tpope/vim-speeddating'
+  " Auto pairs
+  Plug 'jiangmiao/auto-pairs'
+
 call plug#end()
 
 " Function to source only if file exists {

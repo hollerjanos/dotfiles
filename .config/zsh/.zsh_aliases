@@ -1,14 +1,28 @@
+#!/usr/bin/env bash
+
 #==============================
 # Alias(es)
 #==============================
 
+# Use NeoVim instead of Vim (if exists)
+[ -x "$(command -v nvim)" ] && alias vim="nvim" vimdiff="nvim -d"
+
+# Standard attribute(s) for command(s)
+alias cp="cp -iv"
+alias mv="mv -iv"
+alias rm="rm -iv"
+
+# Short version for most used command(s)
 alias c="clear"
-alias v="nvim"
+alias v="${EDITOR}"
+alias g="git"
+
+# Colorize command(s)
+alias ls="ls -hN --color=auto --group-directories-first"
+alias grep="grep --color=auto"
+
+# Other useful alias(es)
 alias weather="clear -x && curl wttr.in"
 alias open="xdg-open"
-alias r="reset"
 alias now="date \"+%Y%m%d%H%M%S\""
-alias aff="~/work/scripts/get-affiliate-data.sh"
-alias count="find . -type f | wc -l"
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias ls="ls --color=always"
+alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'

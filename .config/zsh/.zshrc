@@ -5,11 +5,14 @@
 # Variable(s)
 
 export EDITOR="/usr/bin/nvim"
-export TERMINAL="/home/hollerjanos/.cargo/bin/alacritty"
+export TERMINAL="/${HOME}/.cargo/bin/alacritty"
 export SHELL="/usr/bin/zsh"
-export BROWSER="/usr/bin/firefox"
+export BROWSER="/usr/bin/brave-browser"
 export MANPAGER="nvim +Man!" # Open man page as nvim
 export TERM="xterm-256color"
+
+export CONFIG="${HOME}/.config/"
+export SCRIPTS="${HOME}/.scripts/"
 
 # Turn on Vi mode
 
