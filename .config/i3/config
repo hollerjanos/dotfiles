@@ -109,6 +109,7 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
+# ⚙️
 set $ws1 "1:sys"
 set $ws2 "2:www"
 set $ws3 "3"
@@ -117,7 +118,7 @@ set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
-set $ws9 "9"
+set $ws9 "9:music"
 set $ws10 "10:game"
 
 # switch to workspace
@@ -159,10 +160,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -194,8 +195,10 @@ bar {
     statusline #00FF00
     separator #FFFFFF
 
-    focused_workspace #FFFFFF #808080 #FFFFFF
-    inactive_workspace #404040 #404040 #FFFFFF
+    # focused_workspace #FFFFFF #808080 #FFFFFF
+    # inactive_workspace #404040 #404040 #FFFFFF
+    focused_workspace #FFFFFF #000000 #FFFFFF
+    inactive_workspace #000000 #000000 #FFFFFF
   }
   position top
   workspace_buttons yes
@@ -208,3 +211,5 @@ bar {
   #   -p datetime.format="%Y-%m-%d %H:%M:%S" weather.location="Jásd,Veszprém"\
   #   -t solarized
 }
+
+bindsym $mod+q exec "~/.scripts/system/power.sh"
