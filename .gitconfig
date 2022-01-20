@@ -28,3 +28,8 @@
   co = checkout
   st = status -sb
   lg = log --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %C(white)- %an, %ar%Creset'
+  last = log -1 HEAD --stat
+  se = !git rev-list --all | xargs git grep -F
+  f = fetch
+  p = pull
+  pp = push

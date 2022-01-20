@@ -1,4 +1,19 @@
 "==============================
+" NeoVim Config
+"==============================
+
+" Creator: Holler Janos
+" Release: 2021-06-21 21:18:03
+" Update: 2021-10-23 19:51:17
+" Version: 1.0.0
+
+"==============================
+" Lua
+"==============================
+
+lua require 'init'
+
+"==============================
 " Plugin(s)
 "==============================
 
@@ -20,13 +35,11 @@ call plug#begin('~/.config/nvim/plugged')
   " LSP
   Plug 'neovim/nvim-lspconfig'
   " Smooth scrolling
-  Plug 'psliwka/vim-smoothie'
+  " Plug 'psliwka/vim-smoothie'
   " Better commentary
   Plug 'tpope/vim-commentary'
   " Change dates fast
   Plug 'tpope/vim-speeddating'
-  " Auto pairs
-  Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 
@@ -191,4 +204,4 @@ function! s:goyo_leave()
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
-autocmd! User GoyoLeave nested call <SID>goyo_leave()
+  autocmd! User GoyoLeave nested call <SID>goyo_leave()

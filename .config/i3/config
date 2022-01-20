@@ -99,7 +99,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -213,3 +213,4 @@ bar {
 }
 
 bindsym $mod+q exec "~/.scripts/system/power.sh"
+bindsym $mod+space exec "~/.scripts/system/keyboard.sh"
