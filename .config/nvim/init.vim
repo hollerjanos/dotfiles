@@ -170,6 +170,9 @@ nnoremap <leader>ff <cmd>Telescope file_browser<cr>
 " ToggleTerm
 nnoremap <leader>t <cmd>ToggleTerm size=15 dir=. direction=horizontal<cr>
 
+" Paste current time
+nnoremap <leader>d "=strftime("%Y-%m-%d %H:%M:%S")<CR>P
+
 "==============================
 " Color setting(s)
 "==============================
