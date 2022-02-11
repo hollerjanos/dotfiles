@@ -7,7 +7,7 @@
 export EDITOR="/usr/bin/nvim"
 export TERMINAL="/${HOME}/.cargo/bin/alacritty"
 export SHELL="/usr/bin/zsh"
-export BROWSER="/usr/bin/brave-browser"
+export BROWSER="/usr/bin/firefox"
 export MANPAGER="nvim +Man!" # Open man page as nvim
 export TERM="xterm-256color"
 
