@@ -1,0 +1,50 @@
+[colors]
+background = #000000
+background-alt = #000000
+foreground = #FFFFFF
+underline = #0080FF
+
+[bar/top]
+width = 100%
+height = 25
+background = ${colors.background}
+foreground = ${colors.foreground}
+radius = 6.0
+modules-right = battery volume time
+font-0 = Fira Code:bold:pixelsize=10;1
+cursor-click = pointer
+cursor-scroll = ns-resize
+line-size = 2
+module-margin-right = 1
+
+[module/time]
+type = custom/script
+exec = date '+%Y-%m-%d %H:%M:%S'
+label = "%output%"
+interval = 1
+click-left = $TERMINAL
+format-underline = ${colors.underline}
+format-background = ${colors.background-alt}
+format-padding = 1
+
+[module/volume]
+type = custom/script
+exec = ~/.scripts/polybar/volume.sh
+interval = 1
+label = "%output%"
+click-left = ~/.scripts/polybar/volume.sh -m
+click-right = kill -USR1 %pid%
+scroll-up = kill -USR1 %pid%; ~/.scripts/polybar/volume.sh -u
+scroll-down = ~/.scripts/polybar/volume.sh -d
+format-underline = ${colors.underline}
+format-background = ${colors.background-alt}
+format-padding = 1
+
+[module/battery]
+type = custom/script
+exec = ~/.scripts/battery/battery.sh
+tail = true
+label = "%output%"
+format-underline = ${colors.underline}
+format-background = ${colors.background-alt}
+format-padding = 1
