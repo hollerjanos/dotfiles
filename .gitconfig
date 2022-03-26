@@ -33,3 +33,5 @@
   f = fetch
   p = pull
   pp = push
+[color]
+  ui = true
