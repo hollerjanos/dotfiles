@@ -3,7 +3,7 @@
   username = hollerjanos
   email = hollerjanika@gmail.com
 [core]
-  editor = nvim
+  editor = nvim -c "startinsert"
   pager = /usr/bin/less
 [diff]
   tool = nvimdiff
