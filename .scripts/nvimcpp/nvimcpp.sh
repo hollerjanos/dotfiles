@@ -10,5 +10,5 @@ if [[ ! -d "src" ]]; then
     exit 1
 fi
 
-nvim -S ~/scripts/nvimcpp/nvimcpp.vim
+nvim -S ~/.scripts/nvimcpp/nvimcpp.vim
 

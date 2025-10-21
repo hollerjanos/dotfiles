@@ -8,6 +8,6 @@ opens them with vsplit for each tab.
 Creating an alias for this script is highly recommended!
 
 ```bash
-alias nvimcpp=`~/scripts/nvimcpp/nvimcpp.sh'
+alias nvimcpp=`~/.scripts/nvimcpp/nvimcpp.sh'
 ```
 
