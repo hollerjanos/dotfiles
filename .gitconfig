@@ -1,7 +1,7 @@
 [user]
   name = Holler János
   username = hollerjanos
-  email = hollerjanika@gmail.com
+  email = hollerjanos97@gmail.com
 [core]
   editor = nvim -c "startinsert"
   pager = /usr/bin/less
