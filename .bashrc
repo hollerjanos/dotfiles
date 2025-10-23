@@ -135,16 +135,6 @@ alias nvimcfg='nvim -p $(find ~/.config/nvim/ -maxdepth 3 -type f -name "*.lua")
 #     tmux attach -t holler || tmux new -s holler
 # fi
 
-NeoVimCppProjectOpen() {
-    # Get all header files
-    headerFiles=$(find include src -name "*.hpp")
-
-    for headerFile in ${headerFiles}; do
-        sourceFile="src/$(basename ${headerFile} .hpp).cpp"
-        nvim -p "${headerFile}" -c "vsplit" ${sourceFile}
-    done
-}
-
 alias nvimcpp='~/.scripts/nvimcpp/nvimcpp.sh'
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
