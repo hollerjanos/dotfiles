@@ -126,8 +126,8 @@ export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 # Open all .cpp and .h files in tabs using Neovim
 alias nvimcpp='nvim -p $(find . -maxdepth 2 -type f \( -name "*.cpp" -o -name "*.hpp" \))'
 
-# Compile whole project
-alias compile='g++ -I./include ./src/*.cpp -o main.out'
+# Compile whole C++ project
+alias compile='g++ -I./include $(find ./src -name "*.cpp") -o main.out'
 
 alias nvimcfg='nvim -p $(find ~/.config/nvim/ -maxdepth 3 -type f -name "*.lua")'
 
@@ -135,6 +135,7 @@ alias nvimcfg='nvim -p $(find ~/.config/nvim/ -maxdepth 3 -type f -name "*.lua")
 #     tmux attach -t holler || tmux new -s holler
 # fi
 
-alias nvimcpp='~/.scripts/nvimcpp/nvimcpp.sh'
+alias cpp-init='~/.scripts/cpp-commands/initialization.sh'
+alias cpp-edit='~/.scripts/cpp-commands/editor.sh'
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
