@@ -135,7 +135,5 @@ alias nvimcfg='nvim -p $(find ~/.config/nvim/ -maxdepth 3 -type f -name "*.lua")
 #     tmux attach -t holler || tmux new -s holler
 # fi
 
-alias cpp-init='~/.scripts/cpp-commands/initialization.sh'
-alias cpp-edit='~/.scripts/cpp-commands/editor.sh'
-
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
