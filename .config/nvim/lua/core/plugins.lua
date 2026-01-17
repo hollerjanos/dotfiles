@@ -13,8 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
 
-local lspconfig = require('lspconfig')
-lspconfig.clangd.setup {
+vim.lsp.config("clangd", {
   -- You can add custom settings here if you want
   cmd = { "clangd", "--background-index" }, -- example
   on_attach = function(client, bufnr)
@@ -28,7 +27,25 @@ lspconfig.clangd.setup {
   flags = {
     debounce_text_changes = 150,
   }
-}
+})
+vim.lsp.enable({"clangd"})
+
+-- local lspconfig = require('lspconfig')
+-- lspconfig.clangd.setup {
+--   -- You can add custom settings here if you want
+--   cmd = { "clangd", "--background-index" }, -- example
+--   on_attach = function(client, bufnr)
+--     -- Keymaps or other setup can go here
+--     local bufopts = { noremap=true, silent=true, buffer=bufnr }
+--     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+--     vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+--     vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
+--     -- Add more if you like
+--   end,
+--   flags = {
+--     debounce_text_changes = 150,
+--   }
+-- }
 
 local cmp = require('cmp')
 cmp.setup({
