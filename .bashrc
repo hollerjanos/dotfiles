@@ -131,9 +131,14 @@ alias compile='g++ -I./include $(find ./src -name "*.cpp") -o main.out'
 
 alias nvimcfg='nvim -p $(find ~/.config/nvim/ -maxdepth 3 -type f -name "*.lua")'
 
-# if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-#     tmux attach -t holler || tmux new -s holler
-# fi
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+    tmux attach -t holler || tmux new -s holler
+fi
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
+if command -v motivation >/dev/null 2>%1; then
+    motivation
+fi
+
+export TERM=xterm-256color
