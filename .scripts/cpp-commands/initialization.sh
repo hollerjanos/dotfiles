@@ -13,16 +13,23 @@ echo
 
 # Confirmation prompt
 
-read -p "Would you like to continue? [Y|n] " -n 1 -r confirm
-echo
-confirm=${confirm:-Y}
-
-if [[ "${confirm}" =~ ^[Yy]$ ]]; then
+if $(prompt "Would you like to continue?"); then
     echo "Continue initializing!"
 else
     echo "Initialization has been canceled!"
     exit
 fi
+
+# read -p "Would you like to continue? [Y|n] " -n 1 -r confirm
+# echo
+# confirm=${confirm:-Y}
+#
+# if [[ "${confirm}" =~ ^[Yy]$ ]]; then
+#     echo "Continue initializing!"
+# else
+#     echo "Initialization has been canceled!"
+#     exit
+# fi
 
 # Create directories
 

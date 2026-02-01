@@ -10,6 +10,7 @@ fi
 read -p "${question} [Y|n] " -n 1 -r -s confirm
 echo
 confirm=${confirm:-Y}
+echo
 
 if [[ "${confirm}" =~ ^[Yy]$ ]]; then
     exit 0 # true
