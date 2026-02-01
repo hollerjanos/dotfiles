@@ -1,28 +1,29 @@
 #!/usr/bin/env bash
 
-#==============================
-# Alias(es)
-#==============================
+#===============================================================================
+# Aliases
+#===============================================================================
 
-# Use NeoVim instead of Vim (if exists)
-[ -x "$(command -v nvim)" ] && alias vim="nvim" vimdiff="nvim -d"
-
-# Standard attribute(s) for command(s)
+# Make sure to prompt the user about what will the command do.
 alias cp="cp -iv"
 alias mv="mv -iv"
 alias rm="rm -iv"
 
-# Short version for most used command(s)
-alias c="clear"
-alias v="${EDITOR}"
-alias g="git"
-
-# Colorize command(s)
+# Colorize commands.
 alias ls="ls -hN --color=auto --group-directories-first"
 alias grep="grep --color=auto"
 
-# Other useful alias(es)
+# Other useful aliases.
 alias weather="clear -x && curl wttr.in"
 alias open="xdg-open"
 alias now="date \"+%Y%m%d%H%M%S\""
 alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+# Put NeoVim's path inside $PATH.
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+
+# Compile whole C++ project.
+alias compile='g++ -I./include $(find ./src -name "*.cpp") -o main.out'
+
+# Open up NeoVim Config files.
+alias nvimcfg='nvim -p $(find ~/.config/nvim/ -maxdepth 3 -type f -name "*.lua")'

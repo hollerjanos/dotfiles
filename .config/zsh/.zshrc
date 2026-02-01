@@ -1,8 +1,15 @@
-#==============================
-# Configuration(s)
-#==============================
+#===============================================================================
+# Imports
+#===============================================================================
 
-# Variable(s)
+# Aliases
+[ -e $HOME/.config/zsh/.zsh_aliases ] && source $HOME/.config/zsh/.zsh_aliases
+
+#===============================================================================
+# Configurations
+#===============================================================================
+
+# Variables
 
 export EDITOR="/usr/bin/nvim"
 export TERMINAL="/${HOME}/.cargo/bin/alacritty"
@@ -29,15 +36,19 @@ PROMPT="%F{green}%1~%f "
 
 # Keyboard
 
-setxkbmap gb # Layout
-
 gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 20
 gsettings set org.gnome.desktop.peripherals.keyboard delay 200
-xset r rate 150 50 # Delay & repeat
 
-#==============================
-# Alias(es)
-#==============================
+#===============================================================================
+# After success
+#===============================================================================
 
-# Alias(es)
-[ -e $HOME/.config/zsh/.zsh_aliases ] && source $HOME/.config/zsh/.zsh_aliases
+# Open up TMUX
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+    tmux attach -t holler || tmux new -s holler
+fi
+
+# Display a motivational text
+if command -v motivation >/dev/null 2>%1; then
+    motivation
+fi
